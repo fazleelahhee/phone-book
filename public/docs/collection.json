@@ -1,0 +1,361 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Phone Book RESTFul App API",
+        "_postman_id": "1b45f43c-a406-409d-8e2e-2500d8e6b24f",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "general",
+            "description": "",
+            "item": [
+                {
+                    "name": "User login",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "phone-book.local",
+                            "path": "api\/v1\/auth\/login",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"et\",\n    \"password\": \"autem\"\n}"
+                        },
+                        "description": "[User login ]",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User registration\n{Allow user to register with fatface reward app}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "phone-book.local",
+                            "path": "api\/v1\/auth\/register",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"facilis\",\n    \"email\": \"et\",\n    \"password\": \"sit\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Logout\n{User logged out from app.}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "phone-book.local",
+                            "path": "api\/v1\/auth\/logout",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {your-token}"
+                            },
+                            {
+                                "key": "X-Property-Id",
+                                "value": "must include unique device id with the header."
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display a listing of the phone books.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "phone-book.local",
+                            "path": "api\/v1\/phone-books",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {your-token}"
+                            },
+                            {
+                                "key": "X-Property-Id",
+                                "value": "must include unique device id with the header."
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Show the fields for creating a new phone book item.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "phone-book.local",
+                            "path": "api\/v1\/phone-books\/create",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {your-token}"
+                            },
+                            {
+                                "key": "X-Property-Id",
+                                "value": "must include unique device id with the header."
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Store a newly created phone book item in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "phone-book.local",
+                            "path": "api\/v1\/phone-books",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {your-token}"
+                            },
+                            {
+                                "key": "X-Property-Id",
+                                "value": "must include unique device id with the header."
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the specified phone book item.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "phone-book.local",
+                            "path": "api\/v1\/phone-books\/:phone_book",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {your-token}"
+                            },
+                            {
+                                "key": "X-Property-Id",
+                                "value": "must include unique device id with the header."
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Show the form for editing the specified phone book item.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "phone-book.local",
+                            "path": "api\/v1\/phone-books\/:phone_book\/edit",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {your-token}"
+                            },
+                            {
+                                "key": "X-Property-Id",
+                                "value": "must include unique device id with the header."
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Update the specified phone book item in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "phone-book.local",
+                            "path": "api\/v1\/phone-books\/:phone_book",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {your-token}"
+                            },
+                            {
+                                "key": "X-Property-Id",
+                                "value": "must include unique device id with the header."
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Remove the specified phone book item from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "phone-book.local",
+                            "path": "api\/v1\/phone-books\/:phone_book",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {your-token}"
+                            },
+                            {
+                                "key": "X-Property-Id",
+                                "value": "must include unique device id with the header."
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}

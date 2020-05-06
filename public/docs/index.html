@@ -1,0 +1,504 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://phone-book.local/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>general</h1>
+<!-- START_2be1f0e022faf424f18f30275e61416e -->
+<h2>User login</h2>
+<p>[User login ]</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://phone-book.local/api/v1/auth/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"email":"et","password":"autem"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://phone-book.local/api/v1/auth/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "et",
+    "password": "autem"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": {
+        "access_token": "eyJ0eXAiOiJKV1QiLC...dfgsdfg",
+        "token_type": "Bearer",
+        "expires_at": "2020-09-28 16:00:00"
+    }
+}</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Incorrect email or password"
+}</code></pre>
+<blockquote>
+<p>Example response (429):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Too many requests has been made. Application has been temporarily locked for # minutes"
+}</code></pre>
+<blockquote>
+<p>Example response (422):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "The given data was invalid.",
+    "errors": {
+        "email": [
+            "The email field is required."
+        ],
+        "password": [
+            "The password field is required."
+        ]
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/v1/auth/login</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>Email needed to login.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>Password needed to login.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_2be1f0e022faf424f18f30275e61416e -->
+<!-- START_3157fb6d77831463001829403e201c3e -->
+<h2>User registration</h2>
+<p>{Allow user to register with fatface reward app}</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://phone-book.local/api/v1/auth/register" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"facilis","email":"et","password":"sit"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://phone-book.local/api/v1/auth/register"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "facilis",
+    "email": "et",
+    "password": "sit"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": {
+        "access_token": "eyJ0eXAiOiJKV1QiLC...dfgsdfg",
+        "token_type": "Bearer",
+        "expires_at": "2020-09-28 16:00:00"
+    }
+}</code></pre>
+<blockquote>
+<p>Example response (422):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/v1/auth/register</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>Name is required for the registration.</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>Email is required for the registration and will be used a username &amp; must be unique.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>Password min 8 chars.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_3157fb6d77831463001829403e201c3e -->
+<!-- START_715f1d73092629748c4397de566ea310 -->
+<h2>User Logout</h2>
+<p>{User logged out from app.}</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://phone-book.local/api/v1/auth/logout" \
+    -H "Authorization: Bearer {your-token}" \
+    -H "X-Property-Id: must include unique device id with the header." \
+    -H "Accept: application/json" \
+    -H "Content-Type: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://phone-book.local/api/v1/auth/logout"
+);
+
+let headers = {
+    "Authorization": "Bearer {your-token}",
+    "X-Property-Id": "must include unique device id with the header.",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": {
+        "message": "Successfully logged out"
+    }
+}</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthorized"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/auth/logout</code></p>
+<!-- END_715f1d73092629748c4397de566ea310 -->
+<!-- START_773f554f29afdcf9a3ddd2ed6fb3989a -->
+<h2>Display a listing of the phone books.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://phone-book.local/api/v1/phone-books" \
+    -H "Authorization: Bearer {your-token}" \
+    -H "X-Property-Id: must include unique device id with the header." \
+    -H "Accept: application/json" \
+    -H "Content-Type: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://phone-book.local/api/v1/phone-books"
+);
+
+let headers = {
+    "Authorization": "Bearer {your-token}",
+    "X-Property-Id": "must include unique device id with the header.",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/phone-books</code></p>
+<!-- END_773f554f29afdcf9a3ddd2ed6fb3989a -->
+<!-- START_926a7cf847da20f70a07c0315399c75e -->
+<h2>Show the fields for creating a new phone book item.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://phone-book.local/api/v1/phone-books/create" \
+    -H "Authorization: Bearer {your-token}" \
+    -H "X-Property-Id: must include unique device id with the header." \
+    -H "Accept: application/json" \
+    -H "Content-Type: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://phone-book.local/api/v1/phone-books/create"
+);
+
+let headers = {
+    "Authorization": "Bearer {your-token}",
+    "X-Property-Id": "must include unique device id with the header.",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/phone-books/create</code></p>
+<!-- END_926a7cf847da20f70a07c0315399c75e -->
+<!-- START_20a6ae71ce368464c919286a7377e251 -->
+<h2>Store a newly created phone book item in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://phone-book.local/api/v1/phone-books" \
+    -H "Authorization: Bearer {your-token}" \
+    -H "X-Property-Id: must include unique device id with the header." \
+    -H "Accept: application/json" \
+    -H "Content-Type: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://phone-book.local/api/v1/phone-books"
+);
+
+let headers = {
+    "Authorization": "Bearer {your-token}",
+    "X-Property-Id": "must include unique device id with the header.",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/v1/phone-books</code></p>
+<!-- END_20a6ae71ce368464c919286a7377e251 -->
+<!-- START_0ba7dc912e48d2def8aac7f343629a09 -->
+<h2>Display the specified phone book item.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://phone-book.local/api/v1/phone-books/1" \
+    -H "Authorization: Bearer {your-token}" \
+    -H "X-Property-Id: must include unique device id with the header." \
+    -H "Accept: application/json" \
+    -H "Content-Type: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://phone-book.local/api/v1/phone-books/1"
+);
+
+let headers = {
+    "Authorization": "Bearer {your-token}",
+    "X-Property-Id": "must include unique device id with the header.",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/phone-books/{phone_book}</code></p>
+<!-- END_0ba7dc912e48d2def8aac7f343629a09 -->
+<!-- START_2ccd82ea10006e4d70eb6fef1755b6c3 -->
+<h2>Show the form for editing the specified phone book item.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://phone-book.local/api/v1/phone-books/1/edit" \
+    -H "Authorization: Bearer {your-token}" \
+    -H "X-Property-Id: must include unique device id with the header." \
+    -H "Accept: application/json" \
+    -H "Content-Type: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://phone-book.local/api/v1/phone-books/1/edit"
+);
+
+let headers = {
+    "Authorization": "Bearer {your-token}",
+    "X-Property-Id": "must include unique device id with the header.",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/phone-books/{phone_book}/edit</code></p>
+<!-- END_2ccd82ea10006e4d70eb6fef1755b6c3 -->
+<!-- START_904b14214b5b2ddb340ad5b339835e0a -->
+<h2>Update the specified phone book item in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://phone-book.local/api/v1/phone-books/1" \
+    -H "Authorization: Bearer {your-token}" \
+    -H "X-Property-Id: must include unique device id with the header." \
+    -H "Accept: application/json" \
+    -H "Content-Type: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://phone-book.local/api/v1/phone-books/1"
+);
+
+let headers = {
+    "Authorization": "Bearer {your-token}",
+    "X-Property-Id": "must include unique device id with the header.",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/v1/phone-books/{phone_book}</code></p>
+<p><code>PATCH api/v1/phone-books/{phone_book}</code></p>
+<!-- END_904b14214b5b2ddb340ad5b339835e0a -->
+<!-- START_61bffa72de729f072754721e5a3e34c4 -->
+<h2>Remove the specified phone book item from storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://phone-book.local/api/v1/phone-books/1" \
+    -H "Authorization: Bearer {your-token}" \
+    -H "X-Property-Id: must include unique device id with the header." \
+    -H "Accept: application/json" \
+    -H "Content-Type: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://phone-book.local/api/v1/phone-books/1"
+);
+
+let headers = {
+    "Authorization": "Bearer {your-token}",
+    "X-Property-Id": "must include unique device id with the header.",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE api/v1/phone-books/{phone_book}</code></p>
+<!-- END_61bffa72de729f072754721e5a3e34c4 -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>
