@@ -60,7 +60,7 @@ $php artsan passport:install
 **All done**
 
 ## Api documentation
-Its should be available in:  **http://<your host url>/docs/**
+Its should be available in:  **http://YOUR-LOCALHOST/docs/**
 
 
 ## Unit Test
